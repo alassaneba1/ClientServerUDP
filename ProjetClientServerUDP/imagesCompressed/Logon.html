@@ -1,0 +1,880 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam.eu01.nr-data.net","errorBeacon":"bam.eu01.nr-data.net","licenseKey":"574e11ff20","applicationID":"167014037","transactionName":"MhBSZQoZXxBQVkxRVwtafWc7V3kMXFB7V1YRB19dFB1DTH1aX1dW","queueTime":0,"applicationTime":14,"agent":"","atts":""}</script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"574e11ff20",applicationID:"167014037"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+	<title>Izly</title>
+	<meta name="description" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keyword" content="R">
+    
+    <link rel="shortcut icon" href="/Content/img/favicon/izly_favicon.ico">
+    <link rel="icon" sizes="16x16 32x32 64x64" href="/Content/img/favicon/izly_favicon.ico">
+    <link rel="icon" type="image/png" sizes="196x196" href="/Content/img/favicon/izly_favicon-192.png">
+    <link rel="icon" type="image/png" sizes="160x160" href="/Content/img/favicon/izly_favicon-160.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/Content/img/favicon/izly_favicon-96.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="/Content/img/favicon/izly_favicon-64.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/Content/img/favicon/izly_favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Content/img/favicon/izly_favicon-16.png">
+    <link rel="apple-touch-icon" href="/Content/img/favicon/izly_favicon-57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/Content/img/favicon/izly_favicon-114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/Content/img/favicon/izly_favicon-72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/Content/img/favicon/izly_favicon-144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/Content/img/favicon/izly_favicon-60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/Content/img/favicon/izly_favicon-120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/Content/img/favicon/izly_favicon-76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/Content/img/favicon/izly_favicon-152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/Content/img/favicon/izly_favicon-180.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="/Content/img/favicon/izly_favicon-144.png">
+    <meta name="msapplication-config" content="/Content/img/favicon/browserconfig.xml">
+
+    <link rel="stylesheet" href="/Content/css/login.css?v=1.0">  
+	
+    
+    
+				
+	
+
+        
+	
+    <link rel="stylesheet" href="/Content/css/style.css?v=1.0">
+    <link rel="stylesheet" href="/Content/css/overlay.css?v=1.0">
+    <link rel="stylesheet" href="/Content/css/logon.css?v=1.0">
+
+    
+    <!--[if lt IE 9]>
+		<script src="/Scripts/js/libs/html5ie.js"></script>
+	<![endif]-->
+
+     <script type="text/javascript">
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+            ga('create', 'UA-60424135-2', 'auto');
+            ga('send', 'pageview');
+    </script>
+</head>
+
+<!--[if lt IE 7]> <body class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <body class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <body class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]> <!--> <body> <!--<![endif]-->
+
+
+    <div id="container">
+        <div id="corps">
+            <header>
+                
+                <img src="/Content/img/logo_izly_crous.png" alt="Izly - Simplifiez-vous la vie !" />
+            </header>
+            
+
+
+
+<div class="middleBlock">
+    <h2 class="title">Bienvenue sur votre espace personnel Izly !</h2>
+    <h3 class="subtitle">Veuillez renseigner votre identifiant et votre code secret</h3>
+
+            
+    <div id="logonPartMainBlock" class="mainBlock">
+        <div class="formBlock">
+            <div class="form-group">
+                <label class="form-label logonPartLabel logonPartId" for="username">Identifiant</label>
+
+                <img id="logonPartQuestion" alt="Point d'interrogation" src="/Content/img/pointinterrogation.png" title=""><br />
+
+                <input class="form-control ctMobile" type="text" id="username" name="username" autocomplete="off"/>
+                <div class="form-group mdpOublie" id="idInfo">
+                    Identifiant = adresse e-mail &#224; laquelle vous avez re&#231;u le lien d’activation de votre compte Izly, ou votre num&#233;ro de mobile.
+                </div>
+                <p class="erreurSaisie" id="errLogin_Code">Veuillez saisir votre identifiant</p>
+            </div>
+                <div class="form-group saisieCodeItem">
+                    <label class="form-label logonPartLabel" for="password" style="vertical-align: top;">Code secret</label>
+
+                    <div style="display: block;">
+                        <input type="password" class="inputPwd" disabled="disabled" id="password" maxlength = "6" style="width: 170px;"/><a href="#" class="ctClear"></a>
+                        <p class="erreurSaisie" id="errPassword_Code">Veuillez saisir un code secret valide</p>
+                    </div>
+
+                    <div>
+                        <div class="pin2"><div class="row"><div class="digit">4</div><div class="digit">9</div><div class="digit">1</div><div class="digit">5</div><div class="digit">6</div></div><div class="row"><div class="digit">7</div><div class="digit">8</div><div class="digit">3</div><div class="digit">2</div><div class="digit">0</div></div></div>
+                    </div>
+                </div>
+
+            <div class="form-group form-group-submit">
+                <a id="btnLogon" class="btn btn-primary modalDialog" href="#" rel="#openOverLoading">Valider</a>
+                <a id="btnLogonDisable" class="btn btn-primary modalDialog btnDisabled" href="#">Valider</a>
+            </div>
+
+            <div class="form-group mdpOublie" id="logonPartMdpOublie">
+                Code secret oubli&#233; :
+                <a href="#" id="lnkForgotPassword">Cliquez ici</a>
+            </div>
+
+        </div>
+    </div>
+
+        <div id="divAccessibleVersionLogon">
+            <div class="accessibleVersionLogon" id="divAccessibleVersionLogonAccessible">
+                <a href="/Home/AccessibleVersion?Length=4">Version accessible</a>
+            </div>
+            <div class="accessibleVersionLogon" id="divAccessibleVersionLogonPipe">|</div>
+            <div class="accessibleVersionLogon" id="divAccessibleVersionLogonEn">
+                <a href="/Home/SetCulture?culture=en">en</a>
+            </div>/<div class="accessibleVersionLogon" id="divAccessibleVersionlogonFr">
+                <a href="/Home/SetCulture?culture=fr">fr</a>
+            </div>
+        </div>
+
+    <div class="lnk-style">
+        <a href="/Auth/SendActivationMail" id="lnk-send-activation-mail">Recevoir &#224; nouveau l&#39;e-mail d&#39;activation du compte</a>
+    </div>
+
+    <div class="lnk-style">
+        <a class="lnk-style" href="https://help.izly.fr">Besoin d&#39;aide ? Cliquez ici
+        </a>
+    </div>
+
+
+
+
+        </div>
+
+    </div>
+
+    
+    <div class="modal" id="openOverLoading">
+	<div class="loaderPopIn">
+        <div class="loader"><img class="loader" src="/Content/img/loader.gif" alt="Chargement en cours" /></div>
+        <div class="waiting">Chargement en cours. Veuillez patienter.</div>
+	</div>
+</div>
+    <div class="overlay" id="openOverValidateIzlyAccount">
+    <div class="btnVp validateOverlayHead">
+        <img src="/Content/img/logo.png" alt="Logo Izly">
+    </div>
+    <p class="pOverlay">
+          Ouvrez l’email « Activation de votre compte Izly » reçu sur l’adresse renseignée auprès de votre CROUS.<br />
+          Cliquez ensuite sur le lien d’activation et indiquez le code secret temporaire contenu dans ce mail.<br />
+          Vous accéderez alors au formulaire permettant d’activer votre compte Izly.
+    </p>
+    <div class="btnVp">
+		<a id="validateIzlyAccount" class="btn btn-primary sendCmd"><span>Fermer</span></a>
+	</div>
+
+</div>
+
+
+    <script src="/Scripts/js/libs/jquery-1.6.2.min.js" type="text/javascript"></script> 
+    <script type="text/javascript">    window.jQuery || document.write('<script src="/Scripts/js/libs/jquery-1.6.2.min.js"><\/script>')</script> 
+    <script src="/Scripts/js/libs/jquery.json-2.3.min.js" type="text/javascript"></script> 
+    <script src="/Scripts/js/libs/jquery.selectBox.min.js" type="text/javascript"></script> 
+    <script src="/Scripts/js/libs/prettyCheckboxes.js" type="text/javascript"></script>
+    <script src="/Scripts/js/libs/slides.min.jquery.js" type="text/javascript"></script>
+    <!--[if lt IE 8]>
+	    <script src="/Scripts/js/libs/DD_belatedPNG_0.0.8a-min.js"></script>
+    <![endif]-->
+
+    
+    <script type="text/javascript">
+    var focusControl = null;
+
+    $(window).load(function () {
+        $(document).keypress(function (e) {
+            if (e.which == 13 && CheckControlIsActive()) {
+                var loc = $(focusControl).attr('href');
+                if (loc == "" || loc == "#" || typeof (loc) == "undefined" || loc == null)
+                    $(focusControl).trigger('click');
+                else
+                    location.href = loc;
+            }
+        });
+    });
+
+    function EraseFocusControl() {
+        focusControl = null;
+    }
+
+    function SetFocusControl(ctr) {
+        //Important : le bouton ayant lancé l'action ne doit pas conserver le focus
+        try {
+            $("a").each(function () { this.onmouseup = this.blur(); });
+        }
+        catch (err) {
+            $("a").each(function () { this.blur(); });
+        }
+        
+        focusControl = $(ctr);
+    }
+
+    function CheckControlIsActive() {
+        if (typeof (focusControl) != "undefined" && focusControl != null && $(focusControl).not(".masque").is(":visible")) {
+            try {
+                return ControlIsActive();
+            }
+            catch (err) {
+                return true;
+            }
+        }
+        else
+            return false;        
+    }
+</script>
+    
+    <script type="text/javascript">
+        $('#lnk-send-activation-mail').click(function () {
+            let uname = $('#username').val();
+            if (uname) {
+                let newurl = $(this).attr('href') +
+                    `?username=${uname}`;
+
+                $(this).attr('href', newurl)
+            }
+        });
+    </script>
+
+    <script type="text/javascript">
+        SetFocusControl($("#btnLogon"));
+        function ControlIsActive()
+        {
+            return true;
+        }
+
+        $(document).ready(function () {
+
+            var triggers = $("#openOverLoading").overlay({
+                mask: {
+                    color: '#ebecff',
+                    loadSpeed: 200,
+                    opacity: 0.9
+                },
+                closeOnClick: false
+            });
+
+
+            $.urlParam = function(name){
+                var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href);
+                if (results != null)
+                    return decodeURIComponent(results[1]);
+                else
+                    return '';
+            }
+
+            $("#btnLogon").click(function () {
+                var goodLogin = ValidateLogin($("#username").val());
+                var goodCode = ValidatePassword($("#password").val());
+                if (goodCode && goodLogin)
+                {
+                    $("#errLogin_Code").hide();
+                    $("#errPassword_Code").hide();
+
+                    var temp = document.createElement("form");
+                    temp.action = "/Home/Logon";
+                    temp.method = "POST";
+                    temp.style.display = "none";
+                    var optName = document.createElement("textarea");
+                    optName.name = "username";
+                    optName.value = $("#username").val();
+                    temp.appendChild(optName);
+                    var optPassword = document.createElement("textarea");
+                    optPassword.name = "password";
+                    optPassword.value = $("#password").val();
+                    temp.appendChild(optPassword);
+
+                    var optUrl = document.createElement("textarea");
+                    optUrl.name = "returnUrl";
+                    optUrl.value = $.urlParam('ReturnUrl');
+                    temp.appendChild(optUrl);
+                    document.body.appendChild(temp);
+
+                    var wWidth = $(window).width();
+                    var wHeight = $(window).height();
+                    var popupWidth = $('#openOverLoading').width();
+                    var popupHeight = $('#openOverLoading').height();
+                    var popupTop = (wHeight / 2) - (popupHeight / 2);
+                    var popupLeft = (wWidth / 2) - (popupWidth / 2);
+
+                    temp.submit();
+
+                    $("#openOverLoading").overlay().load();
+                    $('#openOverLoading').css({ 'left': popupLeft, 'top': popupTop });
+                    //return temp;
+                }
+                else
+                {
+                    if(goodLogin)
+                    {
+                        $("#errLogin_Code").hide();
+                    }
+                    else
+                    {
+                        $("#errLogin_Code").show();
+                    }
+                    if(goodCode)
+                    {
+                        $("#errPassword_Code").hide();
+                    }
+                    else
+                    {
+                        $("#errPassword_Code").show();
+                    }
+                }
+            });
+
+            $("#lnkForgotPassword").click(function () {
+                if (ValidateLogin($("#username").val()))
+                {
+                    $("#errLogin_Code").hide();
+                    $("#errPassword_Code").hide();
+
+                    post("/Home/PasswordForgotten" , { username:$("#username").val() });
+                }
+                else
+                {
+                    $("#errLogin_Code").show();
+                }
+            });
+
+            $("#openOverValidateIzlyAccount").overlay({
+                fixed: false,
+                mask: {
+                    color: '#000',
+                    loadSpeed: 500,
+                    opacity: 0.2
+                },
+                closeOnClick: false
+            });
+            $("#btnValidate").click(function () {
+                $("#openOverValidateIzlyAccount").overlay().load();
+            });
+
+            $('#openOverValidateIzlyAccount #validateIzlyAccount').click(function () {
+                $('#openOverValidateIzlyAccount .close').click();
+            });
+
+            // Timer pour s'authentifier dans le cas où l'utilisateur se trompe de mot de passe
+            /*if($('#logonTimerMinutes').length)
+            {
+                $("#btnLogon").css("display", "none");
+                $("#btnLogonDisable").css("display", "inline-block");
+                var logonTimerMinutes = $('#logonTimerMinutes');
+                var logonTimerSeconds = $('#logonTimerSeconds');
+                var duration = 60 *  parseInt($('#logonTimerMinutes').text(),10) + parseInt($('#logonTimerSeconds').text(),10);
+                startTimer(duration, logonTimerMinutes, logonTimerSeconds);
+            }*/
+        });
+
+        $( "#logonPartQuestion" ).click(function() {
+            $("#idInfo").slideToggle();
+        });
+
+        /*function startTimer(duration, logonTimerMinutes, logonTimerSeconds) {
+            var timer = duration, minutes, seconds;
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                logonTimerMinutes.text(minutes);
+                logonTimerSeconds.text(seconds);
+
+                if (--timer < 0) {
+                    $("#timeToLockAuthentification").hide();
+                    $("#btnLogonDisable").css("display", "none");
+                    $("#btnLogon").css("display", "inline-block");
+                }
+            }, 1000);
+        }*/
+
+    </script> 
+
+    <script src="/Scripts/js/libs/jquery-1.6.2.min.js" type="text/javascript"></script>
+<script type="text/javascript">    window.jQuery || document.write('<script src="/Scripts/js/libs/jquery-1.6.2.min.js"><\/script>')</script>
+<script src="/Scripts/js/libs/jquery.json-2.3.min.js" type="text/javascript"></script>
+<script src="/Scripts/js/libs/jquery.selectBox.min.js" type="text/javascript"></script>
+<script src="/Scripts/js/libs/prettyCheckboxes.js" type="text/javascript"></script>
+<script src="/Scripts/js/libs/slides.min.jquery.js" type="text/javascript"></script>
+<script src="/Scripts/js/libs/jquery.validate.min.js" type="text/javascript"></script>
+<script src="/Scripts/jquery.validate.unobtrusive.min.js" type="text/javascript"></script>
+<!--[if lt IE 8]>
+    <script src="/Scripts/js/libs/DD_belatedPNG_0.0.8a-min.js"></script>
+<![endif]-->
+
+<script src="/Scripts/js/script.js?v=1.0" type="text/javascript"></script>
+
+<script src="/Scripts/js/commun.js?v=1.0" type="text/javascript"></script>
+
+<script src="/Scripts/js/libs/jquery.timers-1.2.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    var markNewsAsReadUrl = "/Home/MarkNewsAsRead";
+    var contactDetailsUrl = "/Contact/ContactDetails";
+</script>
+<script src="/Scripts/js/custom/PromoOffer/viewOffer.js?v=1.0" type="text/javascript"></script>
+
+<script type="text/javascript">
+    function ValidateAmount(amount, minAmount) {
+        minAmount = minAmount || 0;
+        var ck_amount = /^((\d|\s)*(\d)+)(([.|,]{1})([0-9]{1,2}))?$/;
+        var goodAmount = ck_amount.test(amount);
+        amount = amount + "";
+        amount = amount.replace(',', '.');
+        return goodAmount && !(parseFloat(amount) < minAmount);
+    }
+
+    function ValidateOTP(code) {
+        var ck_code = /^(\w)+$/;
+        return ck_code.test(code);
+    }
+
+    function ValidateEmail(email) {
+        var filter = /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+        return filter.test(email);
+    }
+
+    function ValidateAlias(alias) {
+        var filter = /^([a-zA-Z])([a-zA-Z0-9_\-\.\#\s]+)$/;
+        return filter.test(alias);
+    }
+
+    function ValidateAttachment(input) {
+        try {
+            if (input != null && input.length > 0 && input[0].files != undefined && [0].files.length > 0) {
+                return input[0].files[0].size <= 512000;
+            }
+            else {
+                return true;
+            }
+        }
+        catch (err) {
+            return true;
+        }
+        return true;
+    }
+
+    function ValidateDayOrMonth(date) {
+        var ck_code = /^(\d){2}?$/;
+        return ck_code.test(date);
+    }
+
+    function ValidateYear(date) {
+        var ck_code = /^(\d){4}?$/;
+        return ck_code.test(date);
+    }
+
+    function ValidatePhoneNumber(phone) {
+        var filter = /^([0])([6-7])(\d){8}?$/;
+        return filter.test(phone);
+    }
+
+    function IsLeapYear($year) {
+        return (($year % 4 === 0 && $year % 100 !== 0) || $year % 400 === 0);
+    }
+
+    function IsValidDate(year, month, day) {
+        if (year == "" || month == "" || day == "" || isNaN(year) || isNaN(month) || isNaN(day))
+            return false;
+
+        if (month < 1 || month > 12)
+            return false;
+
+        if (day > 31)
+            return false;
+
+        if ((month == 4 || month == 6 || month == 9 || month == 11) && day > 30)
+            return false;
+
+        if (month == 2) {
+            if ((day > 29) || (!IsLeapYear(year) && day > 28))
+                return false;
+        }
+
+        return true;
+    }
+
+    // Regénération des codes OTP
+    var reSendSMS = true;
+    function RegenerateCode() {
+        if (reSendSMS) {
+            $.ajax({
+                url: '/Home/SendPaymentCode',
+                type: "POST",
+                cache: false, // For Internet Explorer compatibility
+                context: document.body,
+                data: { confirmation: false, sendBack: false },
+                success: function (result) {
+                    reSendSMS = false;
+                    $('#regenerateCodeMessage').hide();
+                    $('#codeRegeneratedMessage').show();
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    LoadErrorPopUp(jqXHR, textStatus, errorThrown);
+                }
+            });
+        }
+    }
+
+    var reSendMail = true;
+    function RegenerateCodeForSupport() {
+        if (reSendMail) {
+            $.ajax({
+                url: '/Profile/AskForOpposition',
+                type: "POST",
+                cache: false, // For Internet Explorer compatibility
+                context: document.body,
+                success: function (result) {
+                    reSendMail = false;
+                    $('#regenerateCodeMessage').hide();
+                    $('#codeRegeneratedMessage').show();
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    LoadErrorPopUp(jqXHR, textStatus, errorThrown);
+                }
+            });
+        }
+    }
+
+    // Comment this out to disable auto-refresh
+    $("#notificationsBlock").everyTime("60s", function (i) {
+        $.ajax({
+            url: "/Home/RefreshNotifyBlock",
+            cache: false, // For Internet Explorer compatibility
+            context: document.body,
+            success: function (result) {
+                if (result.length > 0)
+                    $("#notificationsBlock").html(result);
+                else
+                    $("#notificationsBlock").stopTime();
+            },
+            error: function () {
+            }
+        });
+    });
+    // End of remark
+
+    function ManageError(overlay, jqXHR, textStatus, errorThrown) {
+        if (overlay != undefined) {
+            if (jqXHR.status == 403) {
+                overlay.find(".close").click();
+                LoadErrorPopUp(jqXHR, textStatus, errorThrown);
+            }
+            else {
+                var xhr = $.parseJSON(jqXHR.responseText);
+                if (xhr.ClosePopIn != undefined && xhr.ClosePopIn == false) {
+                    searchErrors = overlay.find('.customErreurSaisie');
+                    if (searchErrors != undefined) {
+                        var error = searchErrors.first();
+                        error.text(xhr.ErrorMessage);
+                        error.show();
+                    }
+                    else {
+                        searchErrors = overlay.find(".erreurSaisie");
+                        if (searchErrors != undefined) {
+                            var error = searchErrors.first();
+                            error.text(xhr.ErrorMessage);
+                            error.show();
+                        }
+                        else {
+                            overlay.find(".close").click();
+                            LoadErrorPopUp(jqXHR, textStatus, errorThrown);
+                        }
+                    }
+                }
+                else {
+                    overlay.find(".close").click();
+                    LoadErrorPopUp(jqXHR, textStatus, errorThrown);
+                }
+            }
+        }
+        else {
+            overlay.find(".close").click();
+            LoadErrorPopUp(jqXHR, textStatus, errorThrown);
+        }
+    }
+
+    function LoadErrorPopUp(jqXHR, textStatus, errorThrown) {
+        if (jqXHR.status == 403) {
+            var openOver = $("#openOverError");
+            openOver.find(".header").text("Erreur technique");
+            openOver.find(".message").html("Une erreur technique s'est produite. Si le problème persiste, veuillez contacter le service client.");
+        }
+        else {
+            var xhr = $.parseJSON(jqXHR.responseText);
+            var openOver = $("#openOverError");
+            if (xhr.Priority == 3) {
+                openOver = $("#openOverInfo");
+            }
+
+            if (xhr.Priority == 0 || xhr.Priority == 1) {
+                xhr.ErrorMessage += '<br />Vous allez &#234;tre d&#233;connect&#233;.';
+                if (typeof xhr.BtnAction !== 'undefined' && xhr.BtnAction != '') {
+                    openOver.bind('onClose', function () {
+                        window.location.replace(xhr.BtnAction);
+                    });
+                }
+                else {
+                    openOver.bind('onClose', function () {
+                        window.location.replace('/Home/Logon');
+                    });
+                }
+            }
+
+            openOver.find(".header").text(xhr.Title);
+            openOver.find(".message").html(xhr.ErrorMessage);
+        }
+
+        openOver.overlay().load();
+    }
+
+    $(window).load(function () {
+        
+        function getNatural(DOMelement) {
+            var img = new Image();
+            img.src = DOMelement.src;
+            return { width: img.width, height: img.height };
+        }
+
+        $('.chat .avatarContainer').removeClass('avatarBig');
+
+        $('.corpsContainer .avatarContainer').each(function (index) {
+            var img = $(this).children('img');
+            if (img.length === 0)
+                img = $(this).find('img');
+            var h = img[0].naturalHeight;
+            var w = img[0].naturalWidth;
+            if (h == null) {
+                var natural = getNatural(img[0]);
+                h = natural.height;
+                w = natural.width;
+            }
+            var ratio = h / w;
+            if (ratio > 1.15) {
+                var himg = 50 * h / w;
+                var wimg = 50;
+                var limg = 0;
+                var timg = ((himg - 50) / 2) * (-1);
+            }
+            else {
+                var himg = 50;
+                var wimg = 50 * w / h;
+                var limg = ((wimg - 50) / 2) * (-1);
+                var timg = 0;
+            }
+            var src = img.attr("src");
+            var a = img.attr("alt");
+            $(this).html("<div style='width: 50px; height: 50px; position: relative; overflow: hidden;'><img src='" + src + "' alt='" + a + "' style='display: block; position: absolute; width:" + wimg + "px; height:" + himg + "px; left: " + limg + "px; top: " + timg + "px;'/></div>");
+            $(this).children('img').attr("style", "display: block; position: absolute;");
+        });
+
+        $('.carnetTous .avatarContainer, .carnetFav .avatarContainer').each(function (index) {
+            var img = $(this).children('img');
+            if (img.length === 0)
+                img = $(this).find('img');
+            var h = img[0].naturalHeight;
+            var w = img[0].naturalWidth;
+            if (h == null) {
+                var natural = getNatural(img[0]);
+                h = natural.height;
+                w = natural.width;
+            }
+            var ratio = h / w;
+            if (ratio > 1.15) {
+                var himg = 50 * h / w;
+                var wimg = 50;
+                var limg = 0;
+                var timg = ((himg - 50) / 2) * (-1);
+            }
+            else {
+                var himg = 50;
+                var wimg = 50 * w / h;
+                var limg = ((wimg - 50) / 2) * (-1);
+                var timg = 0;
+            }
+            var src = img.attr("src");
+            var a = img.attr("alt");
+            $(this).html("<div style='width: 50px; height: 50px; position: relative; overflow: hidden;'><img src='" + src + "' alt='" + a + "' style='display: block; position: absolute; width:" + wimg + "px; height:" + himg + "px; left: " + limg + "px; top: " + timg + "px;'/></div>");
+            $(this).children('img').attr("style", "display: block; position: absolute;");
+        });
+
+        $('.avatarBig').each(function (index) {
+            var img = $(this).children('img');
+            if (img.length === 0)
+                img = $(this).find('img');
+            var h = img[0].naturalHeight;
+            var w = img[0].naturalWidth;
+            if (h == null) {
+                var natural = getNatural(img[0]);
+                h = natural.height;
+                w = natural.width;
+            }
+            var ratio = h / w;
+            if (ratio > 1.15) {
+                var himg = 70 * h / w;
+                var wimg = 70;
+                var limg = 0;
+                var timg = ((himg - 70) / 2) * (-1);
+            }
+            else {
+                var himg = 70;
+                var wimg = 70 * w / h;
+                var limg = ((wimg - 70) / 2) * (-1);
+                var timg = 0;
+            }
+            var src = img.attr("src");
+            var a = img.attr("alt");
+            $(this).html("<div style='width: 70px; height: 70px; position: relative; overflow: hidden;'><img src='" + src + "' alt='" + a + "' style='display: block; position: absolute; width:" + wimg + "px; height:" + himg + "px; left: " + limg + "px; top: " + timg + "px;'/></div>");
+            $(this).children('img').attr("style", "display: block; position: absolute;");
+        });
+        //POUR BETA ***
+    });
+
+    $(document).ready(function () {
+        if ($("#btnlogoff em").width() >= 122) {
+            $("#btnlogoff span").val("a");
+        }
+
+        $("#openOverError").overlay({
+            mask: {
+                color: '#000',
+                loadSpeed: 500,
+                opacity: 0.2
+            },
+            closeOnClick: false,
+            onBeforeLoad: function () {
+                $(".btnOverError a").click(function () {
+                    $("#openOverError").overlay().close();
+                    return false;
+                });
+            },
+            onLoad: function () {
+                SetFocusControl($(this.getOverlay()).find(".btnDefaultEnterPress:first-child"));
+            },
+            onClose: function () {
+                try {
+                    OnCloseChangeFocus();
+                }
+                catch (err) {
+                    EraseFocusControl();
+                }
+            }
+        });
+
+
+        $("#openOverInfo").overlay({
+            mask: {
+                color: '#000',
+                loadSpeed: 500,
+                opacity: 0.2
+            },
+            closeOnClick: false,
+            onBeforeLoad: function () {
+                $(".btnOverInfo a").click(function () {
+                    $("#openOverInfo").overlay().close();
+                    return false;
+                });
+            },
+            onLoad: function () {
+                SetFocusControl($(this.getOverlay()).find(".btnDefaultEnterPress:first-child"));
+            },
+            onClose: function () { EraseFocusControl(); }
+        });
+
+        $('section input.preC').bind('cut copy', function (event) {
+            event.preventDefault();
+        });
+        $('section input.preC').keydown(function (event) {
+            //99 = 'C', 67 = 'c', 120 = 'X', 88 = 'x'
+            if (event.ctrlKey == true && (event.which == '99' || event.which == '66' || event.which == '120' || event.which == '88')) {
+                event.preventDefault();
+            }
+        });
+        $('section input.preP').bind('paste', function (event) {
+            event.preventDefault();
+        });
+        $('section input.preP').keydown(function (event) {
+            //118 = 'V', 86 = 'v'
+            if (event.ctrlKey == true && (event.which == '118' || event.which == '86')) {
+                event.preventDefault();
+            }
+        });
+    });
+</script>
+
+<!--Confirmation code-->
+<script type="text/javascript">
+    function SendConfirmationCode() {
+        $.ajax({
+            //url: 'Url.Action("SendConfirmationCode", "Notification")',
+            url: '/Home/SendPaymentCode',
+            type: "POST",
+            cache: false,
+            context: document.body,
+            data: {confirmation : true, sendBack : false},
+            success: function (result) {
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                LoadErrorPopUp(jqXHR, textStatus, errorThrown);
+            }
+        });
+    }
+
+    function SendBackConfirmationCode(userId) {
+        $.ajax({
+            //url: 'Url.Action("SendBackConfirmationCode", "Notification")',
+            url: '/Home/SendPaymentCode',
+            type: "POST",
+            cache: false,
+            context: document.body,
+            data: { confirmation: true, sendBack: true },
+            success: function (result) {
+                $('#sendBackCodeMessage').hide();
+                $('#sendBackCodeMessageCompleted').show();
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                LoadErrorPopUp(jqXHR, textStatus, errorThrown);
+            }
+        });
+    }
+</script>
+    <script type="text/javascript">
+    function ValidateLogin(login) {
+        return login.length >= 1;
+    }
+
+    function ValidateCode(code) {
+        var ck_code = /^(\w)+$/;
+        return ck_code.test(code);
+    }
+
+    function ValidatePassword(code) {
+        var ck_code = /^(\d)+$/;
+        return ck_code.test(code);
+    }
+
+    function post(url, PARAMS) {
+        var temp = document.createElement("form");
+        temp.action = url;
+        temp.method = "POST";
+        temp.style.display = "none";
+        for (var x in PARAMS) {
+            var opt = document.createElement("textarea");
+            opt.name = x;
+            opt.value = PARAMS[x];
+            temp.appendChild(opt);
+        }
+        document.body.appendChild(temp);
+        temp.submit();
+        return temp;
+    }
+</script> 
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+URL:https://app.seekube.com/mois-de-lalternance-ingetech-part-ii1/candidate/jobdating/jobs/609b806f9e50390011b2e190
+DTSTART:20210611T093000Z
+DTEND:20210611T100000Z
+SUMMARY:Interview with {recruiter} in #{event}
+DESCRIPTION:Interview with  in #Mois de l'Alternance Ingé/Tech - Part II .
+Resume: 
+LOCATION:phone
+END:VEVENT
+END:VCALENDAR
